@@ -1,3 +1,5 @@
+$highlight: lightblue;
+
 @mixin flex-center() {
   display: flex;
   justify-content: center;
@@ -30,6 +32,22 @@ body {
       .navbar-right {
         width: 30%;
         @include flex-center();
+
+        .active {
+          // text-decoration: underline;
+          color: $highlight;
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          margin-left: 30px;
+        }
+
+        a:hover {
+          color: $highlight;
+          transition: 0.3s;
+        }
       }
     }
 

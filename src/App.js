@@ -17,12 +17,12 @@ function App() {
       <Router>
         <Route path="/" component={Navbar} />
         <Switch>
+          <Route exact path="/" component={HomePage} />
           <Route path="/login" component={Login} />
+          <Route exact path="/weather" component={Weather} />
           <Route path="/about" component={AboutPage} />
-          <Route path="/home" component={HomePage} />
-          <Route path="/weather" componet={Weather} />
-          <Route path="/search-swapi" componet={SearchSwapi} />
-          <Route path="/calandar" component={Calendar} />
+          <Route path="/search-swapi" component={SearchSwapi} />
+          <Route path="/calendar" component={Calendar} />
           <Route path="/pic-carousel" component={PictureCarousel} />
           <Route path="/word-of-the-day" component={WordOfTheDay} />
         </Switch>
