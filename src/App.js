@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import "./styles/App.scss";
+import Navbar from "./components/navigation/Navigation/Navbar";
+import Login from "./components/login/Login";
+import HomePage from "./components/pages/HomePage";
+import AboutPage from "./components/pages/AboutPage";
+import Weather from "./components/pages/Weather";
+import SearchSwapi from "./components/pages/SearchSwapi";
+import Calendar from "./components/pages/Calendar";
+import PictureCarousel from "./components/pages/PictureCarousel";
+import WordOfTheDay from "./components/pages/WordOfTheDay";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Route path="/" component={Navbar} />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/home" component={HomePage} />
+          <Route path="/weather" componet={Weather} />
+          <Route path="/search-swapi" componet={SearchSwapi} />
+          <Route path="/calandar" component={Calendar} />
+          <Route path="/pic-carousel" component={PictureCarousel} />
+          <Route path="/word-of-the-day" component={WordOfTheDay} />
+        </Switch>
+      </Router>
     </div>
   );
 }
