@@ -3,7 +3,9 @@ import { NavLink, Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="navbar-wrapper">
-      <div className="navbar-left">Logo</div>
+      <div className="navbar-left">
+        <Link to="/">Logo</Link>
+      </div>
       <div className="navbar-center-spacer"></div>
       <div className="navbar-right">
         <NavLink exact to="/">
