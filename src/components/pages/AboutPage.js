@@ -7,7 +7,7 @@ function AboutPage() {
           This Capstone is designed to highlight all the skills covered from
           DevPipeline's front end course as of 2022.{" "}
         </p>
-        <h2>My Take aways:</h2>
+        <h2>My Take-Aways:</h2>
         <p></p>
       </div>
     </div>

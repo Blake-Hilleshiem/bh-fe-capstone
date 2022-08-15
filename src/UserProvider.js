@@ -3,21 +3,30 @@ import { useHistory } from "react-router-dom";
 
 export const UserContext = createContext();
 
-console.log("user context: ", UserContext);
-
 export default function UserProvider({ children }) {
   const history = useHistory();
   const [user, setUser] = useState(null);
   const [authIsLoading, setAuthIsLoading] = useState(true);
 
-  console.log("history: ", history);
-
-  const userState = {
-    user,
-    setUser,
-    authIsLoading,
-    setAuthIsLoading,
-  };
+  function logout() {
+    setAuthIsLoading(true);
+    fetch("https://devpipeline-mock-api.herokuapp.com/api/auth/logout", {
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "Logged out") {
+          setUser(null);
+          history.push("/login");
+          //             ^^ '/' will take you to home, maybe make navbar to navigate to '/login'
+        }
+        setAuthIsLoading(false);
+      })
+      .catch((err) => {
+        console.error("logout error");
+      });
+    setAuthIsLoading(false);
+  }
 
   useEffect(() => {
     setAuthIsLoading(true);
@@ -37,10 +46,18 @@ export default function UserProvider({ children }) {
         setAuthIsLoading(false);
       })
       .catch((err) => {
-        setAuthIsLoading(false);
         console.error("Credentials Fetch Error: ", err);
+        setAuthIsLoading(false);
       });
   }, []);
+
+  const userState = {
+    user,
+    setUser,
+    authIsLoading,
+    setAuthIsLoading,
+    logout,
+  };
 
   return (
     <UserContext.Provider value={userState}>{children}</UserContext.Provider>

@@ -1,13 +1,14 @@
 import { useState, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import { UserContext } from "../../UserProvider";
 
-function Login() {
+export default function Login() {
   const history = useHistory();
   const { setUser, setAuthIsLoading, authIsLoading } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -39,35 +40,48 @@ function Login() {
   }
 
   return (
-    <div className="login-wrapper">
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div>
-          <input
-            type="email"
-            required
-            placeholder="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
+    <div>
+      <div className="navbar-wrapper">
+        <div className="navbar-left">
+          <Link to="/login">Logo</Link>
         </div>
-        <div>
-          <input
-            type="password"
-            required
-            placeholder="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <button>Submit</button>
-      </form>
+        <div className="navbar-center-spacer"></div>
+        <div className="navbar-right"></div>
+      </div>
+      <div className="login-wrapper">
+        <form onSubmit={handleSubmit}>
+          <h2>Login</h2>
+          <div>
+            <input
+              type="email"
+              required
+              placeholder="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              required
+              placeholder="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <input type="submit" />
+          </div>
+          {/* <button>Submit</button> */}
+          {errorMessage}
+        </form>
+      </div>
     </div>
   );
 }
 
-export default Login;
+// export default Login;

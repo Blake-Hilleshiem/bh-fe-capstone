@@ -5,12 +5,12 @@ import { UserContext } from "../UserProvider";
 
 export default function withAuth(authorizedRoles) {
   return ({ children, withRedirect }) => {
-    const { user, authIsLoading } = useContext(UserContext);
-
+    const { user } = useContext(UserContext);
+    // console.log("AUTH:", user);
     if (authorizedRoles.includes(user?.role)) {
       return children;
     } else {
-      return withRedirect ? <Redirect path="/login" /> : null;
+      return withRedirect ? <Redirect to="/login" /> : null;
     }
   };
 }

@@ -1,10 +1,17 @@
+/*
+ to do: 
+   Style up
+   get definitions setup
+
+*/
+
 import { useEffect, useState } from "react";
 
 import words from "../../data/words";
 
-function WordOfTheDay() {
+function RandomWordGen() {
   const [selectedWord, setSelectedWord] = useState("await");
-  const [definition, setDefinition] = useState("");
+  // const [definition, setDefinition] = useState("");
 
   function getWordIndex() {
     return Math.floor(Math.random() * words.length);
@@ -23,13 +30,13 @@ function WordOfTheDay() {
   // console.log(words[getWordIndex()]);
   // console.log(words);
   return (
-    <div>
-      <h1>Hello from WordOfTheDay</h1>
-      <div>{selectedWord}</div>
-      <div>{definition}</div>
+    <div className="widget-page-content-container">
+      <h2>The word is:</h2>
+      <h1>{selectedWord}</h1>
+      {/* <div>{definition}</div> */}
       <button onClick={handleOnClick}>New Word</button>
     </div>
   );
 }
 
-export default WordOfTheDay;
+export default RandomWordGen;

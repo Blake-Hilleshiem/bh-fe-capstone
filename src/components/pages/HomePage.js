@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+// import { useContext } from "react";
+
+// import { UserContext } from "../../UserProvider";
 
 function HomePage() {
+  // const { user } = useContext(UserContext);
+  // console.log(" from home AUTH:", user);
   return (
     <div className="home-page-container">
       <h1>Features</h1>
@@ -17,7 +22,7 @@ function HomePage() {
         <Link to="/pic-carousel">
           <div className="widget-link">Picture Carousel</div>
         </Link>
-        <Link to="/word-of-the-day">
+        <Link to="/random-word-generator">
           <div className="widget-link">Word of the Day</div>
         </Link>
       </div>
