@@ -14,7 +14,7 @@ function AboutPage() {
     //   </div>
     <div className="about-page-container">
       <div className="about-page-wrapper">
-        <h1>About</h1>
+        <h1>About:</h1>
         <p>
           This Capstone is designed to highlight all the skills covered from
           DevPipeline's front end course as of 2022. During the course we've

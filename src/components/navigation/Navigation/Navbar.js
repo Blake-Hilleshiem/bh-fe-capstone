@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import Logo from "../../../images/Logo.png";
 
 function Navbar() {
   const [display, setDisplay] = useState(false);
@@ -23,7 +24,9 @@ function Navbar() {
   return (
     <div className="navbar-wrapper">
       <div className="navbar-left">
-        <Link to="/homepage">Logo</Link>
+        <Link className="logo-wrapper" to="/homepage">
+          <img src={Logo} alt="octopus" />
+        </Link>
       </div>
       <div className="navbar-center-spacer"></div>
       <div className="navbar-right">
