@@ -46,7 +46,9 @@ export default function Login() {
           <Link to="/login">Logo</Link>
         </div>
         <div className="navbar-center-spacer"></div>
-        <div className="navbar-right"></div>
+        <div className="navbar-right">
+          {/* <Link to="/about">About</Link> */}
+        </div>
       </div>
       <div className="login-wrapper">
         <form onSubmit={handleSubmit}>

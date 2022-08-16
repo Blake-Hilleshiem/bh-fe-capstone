@@ -1,5 +1,9 @@
 ## FE Capstone:
 
+Login:
+blake@devpipeline.com
+Titpwfmapi
+
 Requirements-
 Render a dashboard w/ cards for widgets.
 MUST HAVE WIDGETS:

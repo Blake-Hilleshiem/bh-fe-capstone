@@ -1,0 +1,17 @@
+.current-temp {
+  font-size: 3.5rem;
+}
+
+.forecast-wrapper {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  .time-slot-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

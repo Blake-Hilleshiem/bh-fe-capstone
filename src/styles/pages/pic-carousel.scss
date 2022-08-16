@@ -1,0 +1,26 @@
+.carousel-wrapper {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 200px;
+    width: 100px;
+  }
+
+  .image-left {
+    height: 100%;
+    width: 100px;
+  }
+
+  .image-center {
+    height: 100%;
+    width: 100px;
+  }
+
+  .image-right {
+    height: 100%;
+    width: 100px;
+  }
+}

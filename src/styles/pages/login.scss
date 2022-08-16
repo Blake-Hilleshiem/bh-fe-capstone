@@ -1,0 +1,7 @@
+@import "../variables.scss";
+
+.login-wrapper {
+  width: 100vw;
+  height: 80vh;
+  @include flex-center();
+}

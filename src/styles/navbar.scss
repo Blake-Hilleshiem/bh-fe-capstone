@@ -1,0 +1,118 @@
+@import "./variables.scss";
+
+.navbar-wrapper {
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  background-color: black;
+  color: white;
+
+  .active {
+    // text-decoration: underline;
+    color: $highlight;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    // margin: 0 30px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a:hover {
+    color: $highlight;
+    transition: 0.3s;
+  }
+
+  .navbar-left {
+    width: 30%;
+    @include flex-center();
+  }
+
+  .navbar-center-spacer {
+    width: 40%;
+  }
+
+  .navbar-right {
+    width: 30%;
+    // @include flex-center();
+    display: flex;
+    align-items: flex-start;
+    margin-top: 40px;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .widgets-dropdown {
+      // display: hidden;
+      width: 100px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // justify-content: flex-start;
+      // align-items: center;
+      background-color: black;
+      z-index: 1;
+      animation: growDown 300ms ease-in-out forwards;
+
+      .menu-toggle {
+        // display: flex;
+        // align-items: flex-start;
+        margin-bottom: 10px;
+      }
+
+      // a {
+      //   // display: hidden;
+      //   // font-size: 0px;
+      //   // margin-left: 0px;
+      //   // width: 100%;
+      //   // margin-top: 10px;
+      //   // display: flex;
+      //   // justify-content: center;
+      //   // align-items: center;
+      // }
+
+      .widgets-dropdown-link {
+        width: 100px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .widgets-dropdown:hover {
+      color: $highlight;
+      cursor: pointer;
+    }
+
+    .widgets-dropdown-hidden {
+      // display: hidden;
+      height: 30px;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      // display: flex;
+      // flex-direction: flex-start;
+      // align-items: flex-start;
+
+      .widgets-dropdown-link-hidden {
+        font-size: 0px;
+        height: 0px;
+        width: 0px;
+        margin-top: 0;
+      }
+    }
+    .widgets-dropdown-hidden:hover {
+      color: $highlight;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

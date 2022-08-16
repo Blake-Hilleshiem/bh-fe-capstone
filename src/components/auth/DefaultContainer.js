@@ -10,7 +10,6 @@ import Calendar from "../pages/Calendar";
 import PictureCarousel from "../pages/PictureCarousel";
 import RandomWordGen from "../pages/RandomWordGen";
 import NavBar from "../navigation/Navigation/Navbar";
-import { StandardUser } from "../../helpers/userRoles";
 
 function Logout() {
   const { logout } = useContext(UserContext);

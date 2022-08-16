@@ -1,6 +1,25 @@
+import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
+  const [display, setDisplay] = useState(false);
+  const [dropDownClass, setDropDownClass] = useState("widgets-dropdown-hidden");
+  const [dropDownLinkClass, setDropDownLinkClass] = useState(
+    "widgets-dropdown-link-hidden"
+  );
+
+  function handleToggleMenu() {
+    setDisplay(!display);
+    if (!display) {
+      setDropDownClass("widgets-dropdown");
+      setDropDownLinkClass("widgets-dropdown-link");
+    } else {
+      setDropDownClass("widgets-dropdown-hidden");
+      setDropDownLinkClass("widgets-dropdown-link-hidden");
+    }
+    console.log(display);
+  }
+
   return (
     <div className="navbar-wrapper">
       <div className="navbar-left">
@@ -8,14 +27,33 @@ function Navbar() {
       </div>
       <div className="navbar-center-spacer"></div>
       <div className="navbar-right">
-        <NavLink to="/homepage">Home</NavLink>
-        <NavLink to="/weather">Weather</NavLink>
-        <NavLink to="/search-swapi">Swapi</NavLink>
-        <NavLink to="/calendar">Calendar</NavLink>
-        <NavLink to="/pic-carousel">Carousel</NavLink>
-        <NavLink to="/random-word-generator">RandWord</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <Link to="/logout">Logout</Link>
+        <NavLink className="widgets-dropdown-link" to="/homepage">
+          Home
+        </NavLink>
+        <div className={dropDownClass} onClick={handleToggleMenu}>
+          <div className="menu-toggle">Widgets</div>
+          <NavLink className={dropDownLinkClass} to="/weather">
+            Weather
+          </NavLink>
+          <NavLink className={dropDownLinkClass} to="/search-swapi">
+            Swapi
+          </NavLink>
+          <NavLink className={dropDownLinkClass} to="/calendar">
+            Calendar
+          </NavLink>
+          <NavLink className={dropDownLinkClass} to="/pic-carousel">
+            Carousel
+          </NavLink>
+          <NavLink className={dropDownLinkClass} to="/random-word-generator">
+            RandWord
+          </NavLink>
+        </div>
+        <NavLink className="widgets-dropdown-link" to="/about">
+          About
+        </NavLink>
+        <Link className="widgets-dropdown-link" to="/logout">
+          Logout
+        </Link>
       </div>
     </div>
   );
