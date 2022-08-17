@@ -1,14 +1,3 @@
-/* 
-Logic: 
-  display
-  on click change state of image based on which button 
-
-Cool things to add: 
-  Zoom up on image on click
-  field to add link to append to list of images
-
-*/
-
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 
 import { UserContext } from "../../UserProvider";
@@ -49,9 +49,7 @@ export default function Login() {
           </Link>
         </div>
         <div className="navbar-center-spacer"></div>
-        <div className="navbar-right">
-          {/* <Link to="/about">About</Link> */}
-        </div>
+        <div className="navbar-right"></div>
       </div>
       <div className="login-container">
         <div className="login-wrapper">
@@ -84,7 +82,6 @@ export default function Login() {
             <div>
               <input className="login-button" type="submit" />
             </div>
-            {/* <button>Submit</button> */}
             {errorMessage}
           </form>
         </div>
@@ -92,5 +89,3 @@ export default function Login() {
     </div>
   );
 }
-
-// export default Login;

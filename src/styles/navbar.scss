@@ -8,14 +8,12 @@
   color: white;
 
   .active {
-    // text-decoration: underline;
     color: $highlight;
   }
 
   a {
     text-decoration: none;
     color: white;
-    // margin: 0 30px;
     width: 80px;
     display: flex;
     justify-content: center;
@@ -49,7 +47,6 @@
 
   .navbar-right {
     width: 30%;
-    // @include flex-center();
     display: flex;
     align-items: flex-start;
     margin-top: 40px;
@@ -59,35 +56,19 @@
     }
 
     .widgets-dropdown {
-      // display: hidden;
       width: 120px;
       height: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // justify-content: flex-start;
-      // align-items: center;
       background-color: black;
       z-index: 1;
-      animation: growDown 300ms ease-in-out forwards;
+      // animation: growDown 300ms ease-in-out forwards;
 
       .menu-toggle {
-        // display: flex;
-        // align-items: flex-start;
         margin-bottom: 10px;
       }
-
-      // a {
-      //   // display: hidden;
-      //   // font-size: 0px;
-      //   // margin-left: 0px;
-      //   // width: 100%;
-      //   // margin-top: 10px;
-      //   // display: flex;
-      //   // justify-content: center;
-      //   // align-items: center;
-      // }
 
       .widgets-dropdown-link {
         width: 120px;
@@ -104,14 +85,10 @@
     }
 
     .widgets-dropdown-hidden {
-      // display: hidden;
       height: 30px;
       width: 120px;
       display: flex;
       justify-content: center;
-      // display: flex;
-      // flex-direction: flex-start;
-      // align-items: flex-start;
 
       .widgets-dropdown-link-hidden {
         font-size: 0px;

@@ -23,8 +23,6 @@ function Logout() {
 
 export default function DefaultContainer() {
   const { user } = useContext(UserContext);
-  // console.log(" from home AUTH:", user);
-  // console.log("userContext: ", UserContext);
   return (
     <div>
       {user._id ? <Route path="/" component={NavBar} /> : console.log("false")}

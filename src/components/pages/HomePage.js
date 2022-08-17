@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
-
-// import { UserContext } from "../../UserProvider";
 
 function HomePage() {
-  // const { user } = useContext(UserContext);
-  // console.log(" from home AUTH:", user);
   return (
     <div className="home-page-container">
       <h1>Widgets:</h1>

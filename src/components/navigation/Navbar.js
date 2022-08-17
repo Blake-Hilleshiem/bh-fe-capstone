@@ -18,7 +18,6 @@ function Navbar() {
       setDropDownClass("widgets-dropdown-hidden");
       setDropDownLinkClass("widgets-dropdown-link-hidden");
     }
-    // console.log(display);
   }
 
   return (

@@ -1,14 +1,7 @@
-import { findAllInRenderedTree } from "react-dom/test-utils";
-import { useState, useEffect } from "react";
-
-// import Loading from "../core/Loading";
+import { useState } from "react";
 
 function Calendar() {
   const [height, setHeight] = useState(6);
-
-  // useEffect(() => {
-  //   RenderTree(generateArray(height));
-  // }, [height]);
 
   function generateArray(num) {
     let char = "*";
@@ -68,22 +61,14 @@ function Calendar() {
       });
   }
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  // }
-
   function handleOnChange(e) {
     setHeight(e.target.value);
-    // console.log("input: ", e.target.value);
   }
 
   return (
     <div className="widget-page-content-container">
       <h1>Tree generator:</h1>
-      {/* <form onSubmit={handleSubmit}> */}
-      <div style={{ marginBottom: "10px;" }}>
-        Enter a number between 3 - 100
-      </div>
+      <div style={{ marginBottom: "10px" }}>Enter a number between 3 - 100</div>
       <input
         type="text"
         value={height}
@@ -113,27 +98,3 @@ function Calendar() {
   );
 }
 export default Calendar;
-
-// -----------
-
-// function Calendar() {
-//   function renderRow() {
-//     const arr = ["Su", "M", "Tu", "W", "Th", "F", "Sa"];
-//     return ["Su", "M", "Tu", "W", "Th", "F", "Sa"].map((arr, i) => {
-//       return (
-//         <div key={i + 1} style={{ marginLeft: "10px" }}>
-//           {arr}
-//         </div>
-//       );
-//     });
-//   }
-//   function renderRow() {
-//     const arr = ["Su", "M", "Tu", "W", "Th", "F", "Sa"];
-//     return ["Su", "M", "Tu", "W", "Th", "F", "Sa"].map((arr, i) => {
-//       return (
-//         <div key={i + 1} style={{ marginLeft: "10px" }}>
-//           {arr}
-//         </div>
-//       );
-//     });
-//   }

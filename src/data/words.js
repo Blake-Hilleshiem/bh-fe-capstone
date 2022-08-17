@@ -1,16 +1,3 @@
-// export default result;
-
-// const newList = words.split(/\r?)
-
-// var strWords = `a
-// b
-// c
-// d
-// e
-// `;
-
-
-
 let strWords = `a
 a-horizon
 a-ok

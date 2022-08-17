@@ -18,7 +18,6 @@ export default function UserProvider({ children }) {
         if (data.message === "Logged out") {
           setUser(null);
           history.push("/login");
-          //             ^^ '/' will take you to home, maybe make navbar to navigate to '/login'
         }
         setAuthIsLoading(false);
       })
@@ -36,7 +35,6 @@ export default function UserProvider({ children }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         if (data.user.role) {
           setUser(data.user);
           history.push("/homepage");
