@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Redirect } from "react-router-dom";
 
-import { UserContext } from "../UserProvider";
+import { UserContext } from "../../UserProvider";
 
 export default function withAuth(authorizedRoles) {
   return ({ children, withRedirect }) => {

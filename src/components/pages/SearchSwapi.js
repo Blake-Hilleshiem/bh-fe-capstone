@@ -121,21 +121,6 @@ function SearchSwapi() {
     planets: lstPlanetsSubjects,
   };
 
-  function RenderInfo(lstOfSubjects) {
-    return lstOfSubjects.map((item, index) => {
-      return (
-        <div className="result-row" key={index}>
-          <div className="subject-item">{`${item} :`}</div>
-          <div>
-            {searchItemDetails[`${item}`]
-              ? searchItemDetails[`${item}`]
-              : "...loading"}
-          </div>
-        </div>
-      );
-    });
-  }
-
   useEffect(() => {
     fetch("https://www.swapi.tech/count/all")
       .then((res) => res.json())
@@ -191,6 +176,21 @@ function SearchSwapi() {
     setDetailsIsLoading(false);
   }, [searchItemFetchRoute]);
 
+  function RenderInfo(lstOfSubjects) {
+    return lstOfSubjects.map((item, index) => {
+      return (
+        <div className="result-row" key={index}>
+          <div className="subject-item">{`${item} :`}</div>
+          <div>
+            {searchItemDetails[`${item}`]
+              ? searchItemDetails[`${item}`]
+              : "...loading"}
+          </div>
+        </div>
+      );
+    });
+  }
+
   // function RenderFromCategory() {
   //   // useEffect(()=>{
 
@@ -214,7 +214,7 @@ function SearchSwapi() {
       >
         <option value="">- Select Search By Subject -</option>
         <option value="people">People</option>
-        <option value="films">Films</option>
+        {/* <option value="films">Films</option> */}
         <option value="starships">Starships</option>
         <option value="vehicles">Vehicles</option>
         <option value="species">Species</option>

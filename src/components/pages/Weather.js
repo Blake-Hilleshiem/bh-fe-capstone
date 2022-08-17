@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Loading from "../core/Loading";
+
 function Weather() {
   const [lat, setLat] = useState("");
   const [long, setLong] = useState("");
@@ -19,6 +21,15 @@ function Weather() {
   const [conditionAt1800, setConditionAt1800] = useState("");
   const [conditionAt2100, setConditionAt2100] = useState("");
 
+  const lstTimes = [
+    "6:00 am",
+    "9:00 am",
+    "12:00 pm",
+    "3:00 pm",
+    "6:00 pm",
+    "9:00 pm",
+  ];
+
   const lstSetTemps = [
     setTempAt600,
     setTempAt900,
@@ -35,15 +46,6 @@ function Weather() {
     setConditionAt1500,
     setConditionAt1800,
     setConditionAt2100,
-  ];
-
-  const lstTimes = [
-    "6:00 am",
-    "9:00 am",
-    "12:00 pm",
-    "3:00 pm",
-    "6:00 pm",
-    "9:00 pm",
   ];
 
   const lstTimeStates = [
@@ -151,17 +153,8 @@ function Weather() {
   return (
     <div>
       {!tempAt600 ? (
-        <div
-          style={{
-            width: "100vw",
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-            fontSize: "3rem",
-            marginTop: "100px",
-          }}
-        >
-          loading...
+        <div>
+          <Loading />
         </div>
       ) : (
         <div className="widget-page-content-container">

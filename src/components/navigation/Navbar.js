@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import Logo from "../../../images/Logo.png";
+import Logo from "../../images/Logo.png";
 
 function Navbar() {
   const [display, setDisplay] = useState(false);
@@ -18,7 +18,7 @@ function Navbar() {
       setDropDownClass("widgets-dropdown-hidden");
       setDropDownLinkClass("widgets-dropdown-link-hidden");
     }
-    console.log(display);
+    // console.log(display);
   }
 
   return (

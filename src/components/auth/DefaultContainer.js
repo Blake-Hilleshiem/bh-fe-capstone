@@ -9,7 +9,7 @@ import SearchSwapi from "../pages/SearchSwapi";
 import Calendar from "../pages/Calendar";
 import PictureCarousel from "../pages/PictureCarousel";
 import RandomWordGen from "../pages/RandomWordGen";
-import NavBar from "../navigation/Navigation/Navbar";
+import NavBar from "../navigation/Navbar";
 
 function Logout() {
   const { logout } = useContext(UserContext);
@@ -23,14 +23,10 @@ function Logout() {
 
 export default function DefaultContainer() {
   const { user } = useContext(UserContext);
-  console.log(" from home AUTH:", user);
-  console.log("userContext: ", UserContext);
+  // console.log(" from home AUTH:", user);
+  // console.log("userContext: ", UserContext);
   return (
     <div>
-      {/* <StandardUser>
-        <Route path="*" component={NavBar} />
-      </StandardUser> */}
-
       {user._id ? <Route path="/" component={NavBar} /> : console.log("false")}
 
       <Switch>

@@ -36,7 +36,7 @@ export default function UserProvider({ children }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.user.role) {
           setUser(data.user);
           history.push("/homepage");
