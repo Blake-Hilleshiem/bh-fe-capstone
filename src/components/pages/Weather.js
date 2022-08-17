@@ -142,7 +142,7 @@ function Weather() {
     return lstTimes.map((time, index) => {
       return (
         <div className="time-slot-wrapper" key={index}>
-          {time}
+          <span style={{ fontWeight: "bold" }}>{time}</span>
           <span>{`${lstTimeStates[index]}°F`}</span>
           <span>{`${lstConditionsStates[index]}`}</span>
         </div>

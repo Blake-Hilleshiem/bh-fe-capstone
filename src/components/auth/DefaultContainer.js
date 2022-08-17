@@ -6,7 +6,7 @@ import HomePage from "../pages/HomePage";
 import Weather from "../pages/Weather";
 import AboutPage from "../pages/AboutPage";
 import SearchSwapi from "../pages/SearchSwapi";
-import Calendar from "../pages/Calendar";
+import TreeGenerator from "../pages/TreeGenerator";
 import PictureCarousel from "../pages/PictureCarousel";
 import RandomWordGen from "../pages/RandomWordGen";
 import NavBar from "../navigation/Navbar";
@@ -35,7 +35,7 @@ export default function DefaultContainer() {
         <Route path="/weather" component={Weather} />
         <Route path="/about" component={AboutPage} />
         <Route path="/search-swapi" component={SearchSwapi} />
-        <Route path="/calendar" component={Calendar} />
+        <Route path="/tree-generator" component={TreeGenerator} />
         <Route path="/pic-carousel" component={PictureCarousel} />
         <Route path="/random-word-generator" component={RandomWordGen} />
       </Switch>

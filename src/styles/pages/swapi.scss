@@ -1,9 +1,52 @@
-.swapi-results-wrapper {
-  .result-row {
+// .swapi-select {
+//   text-decoration: none;
+//   outline: none;
+//   height: 40px;
+//   width: 300px;
+//   text-align: center;
+//   border: solid 1px black;
+//   border-radius: 25px;
+// }
+
+// .swapi-select:focus {
+//   text-decoration: none;
+//   outline: none;
+// }
+
+select {
+  width: 200px;
+  height: 35px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  // text-decoration: none;
+  // outline: none;
+  // height: 40px;
+  // width: 250px;
+  // text-align: center;
+  // border: solid 1px black;
+  // border-radius: 25px;
+}
+
+.swapi-results-container {
+  width: 100vw;
+  margin-top: 30px;
+  display: flex;
+
+  .swapi-spacer {
+    width: 40%;
+  }
+  .swapi-results-wrapper {
     display: flex;
-    margin-top: 10px;
-    .subject-item {
-      width: 135px;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .result-row {
+      display: flex;
+      margin-top: 10px;
+      .subject-item {
+        width: 135px;
+      }
     }
   }
 }

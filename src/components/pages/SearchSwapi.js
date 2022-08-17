@@ -8,6 +8,8 @@ To Do's:
 
 import { useEffect, useState } from "react";
 
+import Loading from "../core/Loading";
+
 function SearchSwapi() {
   const [counts, setCounts] = useState({});
   const [searchBy, setSearchBy] = useState("");
@@ -137,13 +139,13 @@ function SearchSwapi() {
         fetch("https://www.swapi.tech/api/films")
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setListOfNamesObjects(data.result);
           })
           .catch((err) => console.log("fetch error: ", err));
       } else {
         setIsLoading(true);
-        console.log(counts[`${searchBy}`]);
+        // console.log(counts[`${searchBy}`]);
         fetch(
           `https://www.swapi.tech/api/${searchBy}?page=1&limit=${
             counts[`${searchBy}`]
@@ -154,7 +156,7 @@ function SearchSwapi() {
             // console.log(data.results);
             // setListOfPeopleObj(data.results);
             setListOfNamesObjects(data.results);
-            console.log(data.results);
+            // console.log(data.results);
             setIsLoading(false);
           })
           .catch((err) => console.log("fetch error: ", err));
@@ -184,7 +186,7 @@ function SearchSwapi() {
           <div>
             {searchItemDetails[`${item}`]
               ? searchItemDetails[`${item}`]
-              : "...loading"}
+              : "loading..."}
           </div>
         </div>
       );
@@ -205,6 +207,7 @@ function SearchSwapi() {
       <h3>Select a subject to search the Star Wars API</h3>
 
       <select
+        className="swapi-select"
         onChange={(e) => {
           setSearchBy(e.target.value);
           setSearchItemFetchRoute("");
@@ -212,7 +215,7 @@ function SearchSwapi() {
           // console.log(e.target.value);
         }}
       >
-        <option value="">- Select Search By Subject -</option>
+        <option value=""> - Select Search By Subject - </option>
         <option value="people">People</option>
         {/* <option value="films">Films</option> */}
         <option value="starships">Starships</option>
@@ -221,10 +224,11 @@ function SearchSwapi() {
         <option value="planets">Planets</option>
       </select>
       {isLoading ? (
-        <div>...loading</div>
+        <div style={{ marginTop: "20px" }}>loading...</div>
       ) : (
         searchBy && (
           <select
+            className="swapi-select"
             onChange={(e) => {
               setSearchItemFetchRoute(e.target.value);
             }}
@@ -236,11 +240,14 @@ function SearchSwapi() {
         )
       )}
       {detailsIsLoading ? (
-        <div>...loading</div>
+        <div>loading...</div>
       ) : (
         searchItemFetchRoute && (
-          <div className="swapi-results-wrapper">
-            {RenderInfo(subjectsDictionary[`${searchBy}`])}
+          <div className="swapi-results-container">
+            <div className="swapi-spacer"></div>
+            <div className="swapi-results-wrapper">
+              {RenderInfo(subjectsDictionary[`${searchBy}`])}
+            </div>
           </div>
         )
       )}

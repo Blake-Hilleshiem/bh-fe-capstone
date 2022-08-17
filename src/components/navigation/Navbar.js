@@ -41,14 +41,14 @@ function Navbar() {
           <NavLink className={dropDownLinkClass} to="/search-swapi">
             Swapi
           </NavLink>
-          <NavLink className={dropDownLinkClass} to="/calendar">
-            Calendar
+          <NavLink className={dropDownLinkClass} to="/tree-generator">
+            Tree
           </NavLink>
           <NavLink className={dropDownLinkClass} to="/pic-carousel">
             Carousel
           </NavLink>
           <NavLink className={dropDownLinkClass} to="/random-word-generator">
-            RandWord
+            Random Word
           </NavLink>
         </div>
         <NavLink className="widgets-dropdown-link" to="/about">

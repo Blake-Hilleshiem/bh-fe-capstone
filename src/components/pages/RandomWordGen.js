@@ -34,7 +34,9 @@ function RandomWordGen() {
       <h2>The word is:</h2>
       <h1>{selectedWord}</h1>
       {/* <div>{definition}</div> */}
-      <button onClick={handleOnClick}>New Word</button>
+      <button className="new-word-button" onClick={handleOnClick}>
+        New Word
+      </button>
     </div>
   );
 }

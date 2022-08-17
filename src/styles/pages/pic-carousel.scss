@@ -1,9 +1,19 @@
 .carousel-wrapper {
-  width: 80%;
-  height: 200px;
+  width: 50%;
+  height: 300px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .slider-button {
+    font-size: 2rem;
+  }
+
+  .slider-button:hover {
+    color: rgb(80, 80, 80);
+    cursor: pointer;
+  }
 
   img {
     height: 200px;
@@ -13,6 +23,8 @@
   .image-left {
     height: 100%;
     width: 100px;
+    display: flex;
+    align-items: center;
   }
 
   .image-center {
@@ -31,5 +43,7 @@
   .image-right {
     height: 100%;
     width: 100px;
+    display: flex;
+    align-items: center;
   }
 }

@@ -1,4 +1,17 @@
+h1 {
+  margin-top: 40px;
+  font-size: 3rem;
+}
+
 .current-temp {
+  height: 100px;
+  width: auto;
+  padding: 0 10px;
+  border: solid 2px rgb(145, 213, 255);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 3.5rem;
 }
 
@@ -9,9 +22,13 @@
   margin-top: 40px;
 
   .time-slot-wrapper {
+    height: 115px;
+    width: 105px;
+    border: solid 2px rgb(145, 213, 255);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
 }

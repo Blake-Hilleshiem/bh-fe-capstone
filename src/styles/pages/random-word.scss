@@ -1,0 +1,13 @@
+.new-word-button {
+  height: 35px;
+  width: 100px;
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.new-word-button:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}

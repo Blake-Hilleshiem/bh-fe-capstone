@@ -1,7 +1,7 @@
 import { findAllInRenderedTree } from "react-dom/test-utils";
 import { useState, useEffect } from "react";
 
-import Loading from "../core/Loading";
+// import Loading from "../core/Loading";
 
 function Calendar() {
   const [height, setHeight] = useState(6);
@@ -16,7 +16,7 @@ function Calendar() {
 
     if (num < 3) {
       num = 3;
-    } else if (num > 110) {
+    } else if (num > 100) {
       num = 110;
     } else if (isNaN(num) == true) {
       num = 3;
@@ -35,7 +35,14 @@ function Calendar() {
   function RenderTree(arr) {
     return arr.map((el, index) => {
       return (
-        <div key={index} style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          key={index}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            color: "darkgreen",
+          }}
+        >
           {el}
         </div>
       );
@@ -49,7 +56,11 @@ function Calendar() {
         return (
           <div
             key={index}
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              color: "brown",
+            }}
           >
             {el}
           </div>
@@ -68,24 +79,36 @@ function Calendar() {
 
   return (
     <div className="widget-page-content-container">
-      <h1>Hello from Calendar</h1>
+      <h1>Tree generator:</h1>
       {/* <form onSubmit={handleSubmit}> */}
-      <div>Enter a number between 3 - 110 </div>
-      <input type="text" value={height} onChange={handleOnChange} />
-      {height < 3
-        ? "We'll need a value greater than 2, otherwise you'd get a diamond or a stick. We're all about trees here."
-        : height == 44
-        ? "mmmhmm, that's a nice looking tree"
-        : height > 110
-        ? "That's too much tree"
-        : "What does 44 tall look like as a tree? Let's find out"}
-      {/* <div>what does 44 look like as a christmas tree? let's find out</div> */}
-      {/* <input type="submit" target="_blank" />
-      </form> */}
-      {/* <button>Submit</button> */}
-
-      {RenderTree(generateArray(height))}
-      {Number(height) >= 12 ? RenderTrunk() : "*"}
+      <div style={{ marginBottom: "10px;" }}>
+        Enter a number between 3 - 100
+      </div>
+      <input
+        type="text"
+        value={height}
+        onChange={handleOnChange}
+        style={{ textAlign: "center" }}
+      />
+      <div style={{ marginBottom: "40px", marginTop: "10px" }}>
+        {height < 3
+          ? "(We'll need a value greater than 2, otherwise you'd get a diamond or a stick. We're all about trees here.)"
+          : height == 44
+          ? "mmmhmm, that's a nice looking tree"
+          : height > 100
+          ? "That's too much tree"
+          : "What does a 44 `*` tall tree look like? Let's find out!"}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        {RenderTree(generateArray(height))}
+        {Number(height) >= 12 ? RenderTrunk() : "*"}
+      </div>
     </div>
   );
 }
